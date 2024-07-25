@@ -6,13 +6,19 @@
 
     $sheep = new Animal("shaun");
 
-    echo $sheep->name."<br>"; // "shaun"
-    echo $sheep->legs."<br>"; // 4
-    echo $sheep->cold_blooded."<br>"; // "no"
+    echo "Nama Hewan : ".$sheep->name."<br>"; // "shaun"
+    echo "kakinya ada : ".$sheep->legs."<br>"; // 4
+    echo "berdarah : ".$sheep->cold_blooded."<br>"."<br>"; // "no"
 
     $sungokong = new Ape("kera sakti");
-    $sungokong->yell(); // "Auooo"
+    echo "Nama Hewan : ".$sungokong->name."<br>"; 
+    echo "kakinya ada : ".$sungokong->legs."<br>";
+    echo "berdarah : ".$sungokong->cold_blooded."<br>"; 
+    echo "Bersuara : ".$sungokong->yell()."<br>"."<br>"; // "Auooo"
 
     $kodok = new Frog("buduk");
-    $kodok->jump() ; // "hop hop"
+    echo "Nama Hewan : ".$kodok->name."<br>"; 
+    echo "kakinya ada : ".$kodok->legs."<br>"; 
+    echo "berdarah : ".$kodok->cold_blooded."<br>";
+    echo "Bergerak : ".$kodok->jump()."<br>" ; // "hop hop"
 ?>

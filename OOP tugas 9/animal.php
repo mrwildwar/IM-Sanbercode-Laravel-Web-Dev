@@ -15,11 +15,11 @@
     public $legs = 4;
     public $name;
     public $cold_blooded="no";
-    public function __construct($nama){
-    $this->name=$nama;
+    public function __construct($hewan){
+    $this->name=$hewan;
     }
     }
-    
+
 ?>
 </body>
 </html>
