@@ -1,0 +1,67 @@
+1. Membuat database
+
+CREATE DATABASE MYShop;
+
+
+2. Membuat table Users
+
+CREATE TABLE Users (
+ID INT NOT NULL AUTO_INCREMENT,
+NAME VARCHAR(255),
+EMAIL VARCHAR(255),
+PASSWORD VARCHAR(255),
+    PRIMARY KEY (ID)
+); 
+
+Membuat Table Categories
+
+CREATE TABLE Categories(
+ID INT NOT NULL AUTO_INCREMENT,
+NAME VARCHAR(255),
+PRIMARY KEY (ID)
+);
+
+Membuat Table Items
+
+CREATE TABLE Items (
+ID  INT NOT NULL AUTO_INCREMENT,
+NAME VARCHAR(255),
+DESCRIPTION VARCHAR(255),
+PRICE INT,
+STOCK INT,
+    CATEGORY_ID INT,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (ID) REFERENCES categories (ID)
+);
+
+3. Masukkan data User 
+
+INSERT INTO `users`(`ID`, `NAME`, `EMAIL`, `PASSWORD`) VALUES ('1','John Doe','john@doe.com','john123')
+INSERT INTO `users`(`ID`, `NAME`, `EMAIL`, `PASSWORD`) VALUES ('2','Jane Doe','jane@doe.com','jenita123')
+
+masukkan data categories
+INSERT INTO `categories`(`ID`, `NAME`) VALUES ('1','gadget');
+INSERT INTO `categories`(`ID`, `NAME`) VALUES ('2','cloth');
+INSERT INTO `categories`(`ID`, `NAME`) VALUES ('3','men');
+INSERT INTO `categories`(`ID`, `NAME`) VALUES ('4','women');
+INSERT INTO `categories`(`ID`, `NAME`) VALUES ('5','branded');
+
+memasukkan data items
+
+INSERT INTO `items`(`ID`, `NAME`, `DESCRIPTION`, `PRICE`, `STOCK`, `CATEGORY_ID`) VALUES ('1','Sumsang','hape keren dari merek sumsang','4000000','100','1');
+INSERT INTO `items`(`ID`, `NAME`, `DESCRIPTION`, `PRICE`, `STOCK`, `CATEGORY_ID`) VALUES ('2','Uniklooh','baju keren dari brand ternama','500000','50','2');
+INSERT INTO `items`(`ID`, `NAME`, `DESCRIPTION`, `PRICE`, `STOCK`, `CATEGORY_ID`) VALUES ('3','IMHO Watch','jam tangan anak yang jujur banget','2000000','10','1');
+
+4. mengambil data 
+
+SELECT `ID`, `NAME`, `EMAIL` FROM users;
+
+SELECT * FROM `items` WHERE PRICE > 1000000;
+SELECT * FROM `items` WHERE NAME LIKE 'Watch';
+
+
+SELECT items.NAME,items.DESCRIPTION,items.PRICE,items.PRICE,items.CATEGORY_ID,items.ID FROM items INNER JOIN categories ON items.ID = categories.NAME;
+
+5. merubah data 
+
+UPDATE `items` SET `PRICE`='2500000' WHERE NAME LIKE 'sumsang';
